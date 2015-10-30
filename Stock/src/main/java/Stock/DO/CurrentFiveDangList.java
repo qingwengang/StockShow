@@ -22,24 +22,26 @@ import java.util.List;
 
     public synchronized void Add(FiveDang fiveDang) {
         if (currentList.size() > 0) {
-            boolean ifAdd=true;
+            boolean ifAdd = true;
             for (FiveDang dang : currentList) {
                 if (dang.getSymbol().equals(fiveDang.getSymbol())) {
-                    ifAdd=false;
-                    if(!dang.getPriceTime().equals(fiveDang.getPriceTime())){
+                    ifAdd = false;
+                    if (!dang.getPriceTime().equals(fiveDang.getPriceTime())) {
                         currentList.remove(dang);
-                        history.Add(dang);
                         currentList.add(fiveDang);
+                        history.Add(fiveDang);
                     }
                     break;
                 }
             }
-            if(ifAdd){
+            if (ifAdd) {
                 currentList.add(fiveDang);
+                history.Add(fiveDang);
                 System.out.print(fiveDang);
             }
         } else {
             currentList.add(fiveDang);
+            history.Add(fiveDang);
             System.out.print(fiveDang);
         }
     }

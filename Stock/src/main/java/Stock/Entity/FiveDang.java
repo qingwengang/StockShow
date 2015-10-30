@@ -279,6 +279,6 @@ public class FiveDang {
 
     @Override
     public String toString() {
-        return symbol+"_"+priceTime;
+        return symbol+"_"+getSellPrice1()+getBuyPrice1();
     }
 }
