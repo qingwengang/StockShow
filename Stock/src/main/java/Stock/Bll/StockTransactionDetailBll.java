@@ -2,6 +2,7 @@ package Stock.Bll;
 
 import java.util.List;
 
+import Stock.Bll.Interface.IStockTransactionDetailBll;
 import Stock.Dao.StockTransactionDetailDao;
 import Stock.Entity.StockTransactionDetail;
 import Util.HibernateUtil;
@@ -10,7 +11,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 
-public class StockTransactionDetailBll {
+public class StockTransactionDetailBll implements IStockTransactionDetailBll {
 
 	public static List<StockTransactionDetail> GetUnGetIntradayDataDetails(int num){
 		SessionFactory sf= HibernateUtil.getSessionFactory();
@@ -45,5 +46,10 @@ public class StockTransactionDetailBll {
 		session.getTransaction().commit();
 		session.close();
 		return sss;
+	}
+
+	@Override
+	public List<StockTransactionDetail> GetTransactionDetailBySymbol(String symbol) {
+		return null;
 	}
 }

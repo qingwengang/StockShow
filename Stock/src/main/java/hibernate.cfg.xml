@@ -16,7 +16,7 @@
         <property name="connection.username">root</property>  
         <property name="connection.password">ganggang</property>  
   
-        <!-- JDBC connection pool (use the built-in)  
+        <!-- JDBC connection pool (use the built-Interface)
         <property name="connection.pool_size">1</property>  
          -->  
         <!-- SQL dialect -->  

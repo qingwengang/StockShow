@@ -1,30 +1,11 @@
 package Stock.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import java.util.Date;
 
 /**
- * Created by wgqing on 2015/10/26.
+ * Created by wgqing on 2015/11/3.
  */
-@Entity
-public class FiveDang {
-    private long id;
-    @javax.persistence.Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    private String symbol;
-    private String stockName;
-    private double openPrice;
-    private double lastClosePrice;
+public class FiveDangPrice {
     private double currentPrice;
     private double highestPrice;
     private double lowestPrice;
@@ -52,65 +33,6 @@ public class FiveDang {
     private double DealAmount;
     private long DealCount;
 
-    public double getDealAmount() {
-        return DealAmount;
-    }
-
-    public void setDealAmount(double dealAmount) {
-        DealAmount = dealAmount;
-    }
-
-    public long getDealCount() {
-        return DealCount;
-    }
-
-    public void setDealCount(long dealCount) {
-        DealCount = dealCount;
-    }
-
-    public FiveDang() {
-
-    }
-    public Date getPriceTime() {
-        return priceTime;
-    }
-
-    public void setPriceTime(Date priceTime) {
-        this.priceTime = priceTime;
-    }
-    public String getSymbol() {
-        return symbol;
-    }
-
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
-    }
-
-    public String getStockName() {
-
-        return stockName;
-    }
-
-    public void setStockName(String stockName) {
-        this.stockName = stockName;
-    }
-
-    public double getOpenPrice() {
-        return openPrice;
-    }
-
-    public void setOpenPrice(double openPrice) {
-        this.openPrice = openPrice;
-    }
-
-    public double getLastClosePrice() {
-        return lastClosePrice;
-    }
-
-    public void setLastClosePrice(double lastClosePrice) {
-        this.lastClosePrice = lastClosePrice;
-    }
-
     public double getCurrentPrice() {
         return currentPrice;
     }
@@ -133,6 +55,14 @@ public class FiveDang {
 
     public void setLowestPrice(double lowestPrice) {
         this.lowestPrice = lowestPrice;
+    }
+
+    public Date getPriceTime() {
+        return priceTime;
+    }
+
+    public void setPriceTime(Date priceTime) {
+        this.priceTime = priceTime;
     }
 
     public double getBuyPrice1() {
@@ -295,8 +225,19 @@ public class FiveDang {
         SellCount5 = sellCount5;
     }
 
-    @Override
-    public String toString() {
-        return symbol+"_"+getSellPrice1()+getBuyPrice1();
+    public double getDealAmount() {
+        return DealAmount;
+    }
+
+    public void setDealAmount(double dealAmount) {
+        DealAmount = dealAmount;
+    }
+
+    public long getDealCount() {
+        return DealCount;
+    }
+
+    public void setDealCount(long dealCount) {
+        DealCount = dealCount;
     }
 }

@@ -12,8 +12,7 @@ import org.jsoup.nodes.Document;
 import java.io.IOException;
 import java.lang.Runnable;
 import java.text.SimpleDateFormat;
-import java.util.DoubleSummaryStatistics;
-import java.util.List;
+import java.util.*;
 
 /**
  * 获取五档信息
@@ -89,6 +88,8 @@ public class GetFiveDangThread implements Runnable {
                 dang.setSellCount3(Long.parseLong(prices[24]));
                 dang.setSellCount4(Long.parseLong(prices[26]));
                 dang.setSellCount5(Long.parseLong(prices[28]));
+                dang.setDealCount(Long.parseLong(prices[8]));
+                dang.setDealAmount(Double.parseDouble(prices[9]));
                 try {
                     String dateString=prices[30] + " " + prices[31];
                     dang.setPriceTime(sdf1.parse(dateString));
@@ -107,11 +108,23 @@ public class GetFiveDangThread implements Runnable {
 
     @Override
     public void run() {
+        System.out.println("===========getfivedang started================");
         while (true){
-            GetFiveDang();
-            try{
-            Thread.sleep(2000);}catch (Exception e){
-                e.printStackTrace();
+            Calendar calendar = Calendar.getInstance(Locale.CHINA);
+            int currentTimeHour = calendar.get(Calendar.HOUR_OF_DAY);
+            System.out.println("currenttimehour:"+currentTimeHour);
+            int currentTimeMinute= calendar.get(Calendar.MINUTE);
+            if(currentTimeHour>=9 && currentTimeHour<=15){
+                GetFiveDang();
+                try{
+                    Thread.sleep(2000);}catch (Exception e){
+                    e.printStackTrace();
+                }
+            }else{
+                try{
+                    Thread.sleep(60000);}catch (Exception e){
+                    e.printStackTrace();
+                }
             }
         }
     }
