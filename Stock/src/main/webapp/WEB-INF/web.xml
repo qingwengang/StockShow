@@ -3,9 +3,17 @@
          xmlns="http://java.sun.com/xml/ns/javaee"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          id="WebApp_ID" version="3.0">
+    <!--<servlet>-->
+        <!--<servlet-name>InitServlet</servlet-name>-->
+        <!--<servlet-class>Servlet.InitServlet</servlet-class>-->
+        <!--<load-on-startup>1</load-on-startup>-->
+    <!--</servlet>-->
     <servlet>
-        <servlet-name>InitServlet</servlet-name>
-        <servlet-class>Servlet.InitServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
+        <servlet-name>handlerServlet</servlet-name>
+        <servlet-class>MVC.HandlerServlet</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>handlerServlet</servlet-name>
+        <url-pattern>/do/*</url-pattern>
+    </servlet-mapping>
 </web-app>

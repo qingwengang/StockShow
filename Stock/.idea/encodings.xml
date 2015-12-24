@@ -10,5 +10,10 @@
     <file url="file://$PROJECT_DIR$/src/main/java/Util/JsoupUtil.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/hibernate.cfg.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/css/common.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/jqueryui" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/common.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/handlebars-v4.0.5.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/jquery-2.1.4.min.js" charset="GBK" />
   </component>
 </project>

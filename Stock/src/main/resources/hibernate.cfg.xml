@@ -41,6 +41,10 @@
         <mapping class="Stock.Entity.StockInfo"/>
         <mapping class="Stock.Entity.StockTransactionDetail"/>
         <mapping class="Stock.Entity.FiveDang"/>
+        <mapping class="Stock.Entity.Ticai"/>
+        <mapping class="Stock.Entity.TicaiStockRelation"/>
+        <mapping class="Stock.Entity.StockAnalysis"/>
+        <mapping class="Stock.DO.StockAnalysisDo"/>
     </session-factory>  
   
 </hibernate-configuration>  

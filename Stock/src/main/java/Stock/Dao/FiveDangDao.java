@@ -16,6 +16,7 @@ import java.util.List;
 public class FiveDangDao implements IFiveDangDao {
     @Override
     public FiveDang GetFirstFiveDang(Calendar day) {
+        String sql="select * from fivedang where priceTime<'2015-11-10' LIMIT 0,1";
         return null;
     }
 
@@ -48,9 +49,14 @@ public class FiveDangDao implements IFiveDangDao {
         List<FiveDang> fiveDangs=new LinkedList<FiveDang>();
         return fiveDangs;
     }
-
     @Override
     public boolean DeleteFiveDang(List<FiveDang> fiveDangs) {
-        return false;
+        SessionFactory sf= HibernateUtil.getSessionFactory();
+        Session session=sf.openSession();
+        for(FiveDang dang : fiveDangs){
+            session.delete(dang);
+        }
+        session.close();
+        return true;
     }
 }

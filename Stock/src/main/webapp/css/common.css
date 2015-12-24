@@ -1,0 +1,40 @@
+table{border-collapse:collapse;}
+table, td, th { border:1px solid black;}
+#main {
+	width: 100%;
+	height: auto;
+	border: 1px solid #e5e5e5
+}
+
+#left {
+	width: 15%;
+	height: 600px;
+	border: 1px solid #e5e5e5
+}
+
+#right {
+	width: 80%;
+	height: auto !important;
+	margin-left: 10px;
+	border: 1px solid #e5e5e5
+}
+
+#chartdiv {
+	margin: 0;
+	height: 200px;
+	border: 1px solid #e5e5e5
+}
+
+#left, #right {
+	float: left;
+}
+.table-bordered {
+	border: 1px solid #dddddd;
+	border-collapse: separate;
+	border-left: 0;
+	border-radius: 2px;
+}
+.table {
+	width: 100%;
+	margin-bottom: 20px;
+}

@@ -39,7 +39,7 @@
            
      <!--   <mapping resource="com/bird/model/Student.hbm.xml"/> -->
         <mapping class="Stock.Entity.StockInfo"/>
-        <
+
     </session-factory>  
   
 </hibernate-configuration>  
