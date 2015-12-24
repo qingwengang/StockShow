@@ -10,72 +10,28 @@ Target Server Type    : MYSQL
 Target Server Version : 50087
 File Encoding         : 65001
 
-Date: 2015-10-30 18:40:36
+Date: 2015-12-24 16:58:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `fivedang`
+-- Table structure for `stockanalysis`
 -- ----------------------------
-DROP TABLE IF EXISTS `fivedang`;
-CREATE TABLE `fivedang` (
+DROP TABLE IF EXISTS `stockanalysis`;
+CREATE TABLE `stockanalysis` (
 `Id`  bigint(20) NOT NULL AUTO_INCREMENT ,
-`Symbol`  varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
-`StockName`  varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
-`openPrice`  double NULL DEFAULT NULL ,
-`lastClosePrice`  double NULL DEFAULT NULL ,
-`currentPrice`  double NULL DEFAULT NULL ,
-`highestPrice`  double NULL DEFAULT NULL ,
-`lowestPrice`  double NULL DEFAULT NULL ,
-`priceTime`  datetime NULL DEFAULT NULL ,
-`BuyPrice1`  double NULL DEFAULT NULL ,
-`BuyCount1`  bigint(20) NULL DEFAULT NULL ,
-`BuyPrice2`  double NULL DEFAULT NULL ,
-`BuyCount2`  bigint(20) NULL DEFAULT NULL ,
-`BuyPrice3`  double NULL DEFAULT NULL ,
-`BuyCount3`  bigint(20) NULL DEFAULT NULL ,
-`BuyPrice4`  double NULL DEFAULT NULL ,
-`BuyCount4`  bigint(20) NULL DEFAULT NULL ,
-`BuyPrice5`  double NULL DEFAULT NULL ,
-`BuyCount5`  bigint(20) NULL DEFAULT NULL ,
-`SellPrice1`  double NULL DEFAULT NULL ,
-`SellCount1`  bigint(20) NULL DEFAULT NULL ,
-`SellPrice2`  double NULL DEFAULT NULL ,
-`SellCount2`  bigint(20) NULL DEFAULT NULL ,
-`SellPrice3`  double NULL DEFAULT NULL ,
-`SellCount3`  bigint(20) NULL DEFAULT NULL ,
-`SellPrice4`  double NULL DEFAULT NULL ,
-`SellCount4`  bigint(20) NULL DEFAULT NULL ,
-`SellPrice5`  double NULL DEFAULT NULL ,
-`SellCount5`  bigint(20) NULL DEFAULT NULL ,
+`Code`  varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
+`SupportPrice`  double NULL DEFAULT NULL ,
+`PressurePrice`  double NULL DEFAULT NULL ,
+`PlanBuyPrice`  double NULL DEFAULT NULL ,
+`PlanSellPrice`  double NULL DEFAULT NULL ,
+`BuyPrice`  double NULL DEFAULT NULL ,
 PRIMARY KEY (`Id`)
 )
 ENGINE=InnoDB
 DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
-/*!50003 AUTO_INCREMENT=3248176 */
-
-;
-
--- ----------------------------
--- Table structure for `stockalarm`
--- ----------------------------
-DROP TABLE IF EXISTS `stockalarm`;
-CREATE TABLE `stockalarm` (
-`Id`  int(11) NOT NULL AUTO_INCREMENT ,
-`Symbol`  varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
-`LowPrice`  double(10,2) NULL DEFAULT NULL ,
-`HighPrice`  double(10,2) NULL DEFAULT NULL ,
-`Flag`  int(255) NULL DEFAULT NULL ,
-`Status`  int(255) NULL DEFAULT NULL ,
-`CurrentPrice`  double(10,2) NULL DEFAULT 0.00 ,
-`IfMusic`  int(255) NULL DEFAULT 1 ,
-`FiveDang`  varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
-PRIMARY KEY (`Id`)
-)
-ENGINE=InnoDB
-DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
-/*!50003 AUTO_INCREMENT=4 */
+/*!50003 AUTO_INCREMENT=9 */
 
 ;
 
@@ -151,23 +107,19 @@ CREATE TABLE `ticaistockrelation` (
 `TicaiId`  int(11) NULL DEFAULT NULL ,
 `StockCode`  varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
 `Status`  int(11) NULL DEFAULT NULL ,
+`Level`  int(11) NULL DEFAULT 0 ,
 PRIMARY KEY (`Id`)
 )
 ENGINE=InnoDB
 DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
-/*!50003 AUTO_INCREMENT=3 */
+/*!50003 AUTO_INCREMENT=9 */
 
 ;
 
 -- ----------------------------
--- Auto increment value for `fivedang`
+-- Auto increment value for `stockanalysis`
 -- ----------------------------
-ALTER TABLE `fivedang` AUTO_INCREMENT=3248176;
-
--- ----------------------------
--- Auto increment value for `stockalarm`
--- ----------------------------
-ALTER TABLE `stockalarm` AUTO_INCREMENT=4;
+ALTER TABLE `stockanalysis` AUTO_INCREMENT=9;
 
 -- ----------------------------
 -- Auto increment value for `stockinfo`
@@ -187,4 +139,4 @@ ALTER TABLE `ticai` AUTO_INCREMENT=4;
 -- ----------------------------
 -- Auto increment value for `ticaistockrelation`
 -- ----------------------------
-ALTER TABLE `ticaistockrelation` AUTO_INCREMENT=3;
+ALTER TABLE `ticaistockrelation` AUTO_INCREMENT=9;
