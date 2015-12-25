@@ -32,13 +32,25 @@ public class TicaiBll implements ITicaiBll {
         }
     }
 
+    public void addTicai(Ticai ticai){
+        String sql=String.format("select * from ticai where url='%s'",ticai.getUrl());
+        List<Ticai> ticais=ticaiDao.Query(sql);
+        if(ticais==null ||ticais.size()==0){
+            ticaiDao.AddTicai(ticai);
+        }
+    }
+
     @Override
     public void addTicaiStockRelation(TicaiStockRelation relation) {
-        relationDao.AddTicaiStockRelation(relation);
-        if(analysisBll.GetStockAnalusisByCode(relation.getStockCode())==null){
-            StockAnalysis analysis=new StockAnalysis();
-            analysis.setCode(relation.getStockCode());
-            analysisBll.addStockAnalysis(analysis);
+        String sql = String.format("SELECT * from ticaistockrelation where TicaiId=%s and StockCode='%s'", relation.getTicaiId(), relation.getStockCode());
+        List<TicaiStockRelation> rels = relationDao.Query(sql);
+        if (rels == null || rels.size() == 0) {
+            relationDao.AddTicaiStockRelation(relation);
+            if (analysisBll.GetStockAnalusisByCode(relation.getStockCode()) == null) {
+                StockAnalysis analysis = new StockAnalysis();
+                analysis.setCode(relation.getStockCode());
+                analysisBll.addStockAnalysis(analysis);
+            }
         }
     }
 

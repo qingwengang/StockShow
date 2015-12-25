@@ -49,17 +49,17 @@
           var tbHtml4="";
           $.each(jsonResp1,function(index,item){
             if(item.level==1){
-              tbHtml1+="<tr><td>"+item.code+"</td><td>"+item.name+"</td><td>"+item.currentPrice+"</td><td>"+item.buyPrice+"</td><td>"+item.supportPrice+"</td><td>"+item.pressurePrice+"</td><td>"+item.planSellPrice+"</td><td><input type='button' value='详情' onclick='showTr(\""+item.code+"\")'><input type='button' value='降' onclick='modifyLevel(\""+item.id+"\",\"1\")'><input type='button' value='Eidt' onclick='editAnalysisData(\""+item.id+"\",\""+item.code+"\")'> </td></tr>";
-              tbHtml1+="<tr id='"+item.code+"' style='display:none'><td colspan='8'><iframe src=\"http://finance.sina.com.cn/flash/cn.swf?symbol="+item.symbol+"\" width=\"560\" height=\"500\"></iframe></td></tr>";
+              tbHtml1+="<tr><td>"+item.code+"</td><td>"+item.name+"</td><td>"+item.currentPrice+"</td><td>"+item.buyPrice+"</td><td>"+item.supportPrice+"</td><td>"+item.pressurePrice+"</td><td>"+item.planSellPrice+"</td><td><input type='button' value='详情' onclick='showTr(\""+item.code+"\",\""+item.symbol+"\")'><input type='button' value='降' onclick='modifyLevel(\""+item.id+"\",\"1\")'><input type='button' value='Eidt' onclick='editAnalysisData(\""+item.id+"\",\""+item.code+"\")'> </td></tr>";
+              tbHtml1+="<tr id='"+item.code+"' style='display:none'></tr>";
             }else if(item.level==2){
-              tbHtml2+="<tr><td>"+item.code+"</td><td>"+item.name+"</td><td>"+item.currentPrice+"</td><td>"+item.planBuyPrice+"</td><td>"+item.supportPrice+"</td><td>"+item.pressurePrice+"</td><td><input type='button' value='详情' onclick='showTr(\""+item.code+"\")'><input type='button' value='降' onclick='modifyLevel(\""+item.id+"\",\"1\")'><input type='button' value='升' onclick='modifyLevel(\""+item.id+"\",\"-1\")'><input type='button' value='Eidt' onclick='editAnalysisData(\""+item.id+"\",\""+item.code+"\")'>  </td></tr>";
-              tbHtml2+="<tr id='"+item.code+"' style='display:none'><td colspan='7'><iframe src=\"http://finance.sina.com.cn/flash/cn.swf?symbol="+item.symbol+"\" width=\"560\" height=\"500\"></iframe></td></tr>";
+              tbHtml2+="<tr><td>"+item.code+"</td><td>"+item.name+"</td><td>"+item.currentPrice+"</td><td>"+item.planBuyPrice+"</td><td>"+item.supportPrice+"</td><td>"+item.pressurePrice+"</td><td><input type='button' value='详情' onclick='showTr(\""+item.code+"\",\""+item.symbol+"\")'><input type='button' value='降' onclick='modifyLevel(\""+item.id+"\",\"1\")'><input type='button' value='升' onclick='modifyLevel(\""+item.id+"\",\"-1\")'><input type='button' value='Eidt' onclick='editAnalysisData(\""+item.id+"\",\""+item.code+"\")'>  </td></tr>";
+              tbHtml2+="<tr id='"+item.code+"' style='display:none'></tr>";
             }else if(item.level==3){
-              tbHtml3+="<tr><td>"+item.code+"</td><td>"+item.name+"</td><td>"+item.currentPrice+"</td><td>"+item.supportPrice+"</td><td>"+item.pressurePrice+"</td><td><input type='button' value='详情' onclick='showTr(\""+item.code+"\")'><input type='button' value='降' onclick='modifyLevel(\""+item.id+"\",\"1\")'><input type='button' value='升' onclick='modifyLevel(\""+item.id+"\",\"-1\")'><input type='button' value='Eidt' onclick='editAnalysisData(\""+item.id+"\",\""+item.code+"\")'> </td></tr>";
-              tbHtml3+="<tr id='"+item.code+"' style='display:none'><td colspan='6'><iframe src=\"http://finance.sina.com.cn/flash/cn.swf?symbol="+item.symbol+"\" width=\"560\" height=\"500\"></iframe></td></tr>";
+              tbHtml3+="<tr><td>"+item.code+"</td><td>"+item.name+"</td><td>"+item.currentPrice+"</td><td>"+item.supportPrice+"</td><td>"+item.pressurePrice+"</td><td><input type='button' value='详情' onclick='showTr(\""+item.code+"\",\""+item.symbol+"\")'><input type='button' value='降' onclick='modifyLevel(\""+item.id+"\",\"1\")'><input type='button' value='升' onclick='modifyLevel(\""+item.id+"\",\"-1\")'><input type='button' value='Eidt' onclick='editAnalysisData(\""+item.id+"\",\""+item.code+"\")'> </td></tr>";
+              tbHtml3+="<tr id='"+item.code+"' style='display:none'></tr>";
             }else if(item.level==4){
-              tbHtml4+="<tr><td>"+item.code+"</td><td>"+item.name+"</td><td>"+item.currentPrice+"</td><td>"+item.supportPrice+"</td><td>"+item.pressurePrice+"</td><td><input type='button' value='详情' onclick='showTr(\""+item.code+"\")'><input type='button' value='升' onclick='modifyLevel(\""+item.id+"\",\"-1\")'><input type='button' value='Eidt' onclick='editAnalysisData(\""+item.id+"\",\""+item.code+"\")'>  </td></tr>";
-              tbHtml4+="<tr id='"+item.code+"' style='display:none'><td colspan='6'><iframe src=\"http://finance.sina.com.cn/flash/cn.swf?symbol="+item.symbol+"\" width=\"560\" height=\"500\"></iframe></td></tr>";
+              tbHtml4+="<tr><td>"+item.code+"</td><td>"+item.name+"</td><td>"+item.currentPrice+"</td><td>"+item.supportPrice+"</td><td>"+item.pressurePrice+"</td><td><input type='button' value='详情' onclick='showTr(\""+item.code+"\",\""+item.symbol+"\")'><input type='button' value='升' onclick='modifyLevel(\""+item.id+"\",\"-1\")'><input type='button' value='Eidt' onclick='editAnalysisData(\""+item.id+"\",\""+item.code+"\")'>  </td></tr>";
+              tbHtml4+="<tr id='"+item.code+"' style='display:none'></tr>";
             }
 
           });
@@ -80,10 +80,12 @@
         ReflashAnylysisData();
       });
     }
-    function showTr(id){
+    function showTr(id,code){
+      var html="<td colspan='8'><iframe src=\"http://finance.sina.com.cn/flash/cn.swf?symbol="+code+"\" width=\"560\" height=\"500\"></iframe></td>";
       var display =$("#"+id).css('display');
       if(display=='none'){
         $("#"+id).show();
+        $("#"+id).html(html);
       }else{
         $("#"+id).hide();
       }
@@ -179,7 +181,7 @@
       <tbody id="tbAnaly3">
       </tbody>
     </table>
-    垃圾股：
+    股池：
     <table class="table table-bordered">
       <tr>
         <th>代码</th>
@@ -194,7 +196,7 @@
     </table>
   </div>
 </div>
-<div id="dialog" title="基本的对话框" style="display: none;">
+<div id="dialog" title="编辑参数" style="display: none;">
   <table>
     <tr>
       <td>支撑点</td><td><input type="text" id="txtSupportPrice"></td>

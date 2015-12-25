@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/Stock/Bll/StockTransactionDetailBll.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/Stock/Dao/StockTransactionDetailDao.java" charset="GBK" />
@@ -15,5 +15,7 @@
     <file url="file://$PROJECT_DIR$/src/main/webapp/js/common.js" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/js/handlebars-v4.0.5.js" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/js/jquery-2.1.4.min.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/test/java/test.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
