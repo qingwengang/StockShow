@@ -22,9 +22,18 @@
         alert(data);
       });
     }
+    function StockInfoInit(name){
+      var url="do/ControlController."+name;
+      GetAjax(url, function(
+              data) {
+        alert(data);
+      });
+    }
   </script>
 </head>
 <body>
 <input type="button" onclick="StockInfoInit()" value="StockInfo表初始化">
+<input type="button" onclick="StockInfoInit('getTicai')" value="ticai表初始化">
+<input type="button" onclick="StockInfoInit('getTicaiStockRelation')" value="ticaistockrelation表初始化">
 </body>
 </html>
