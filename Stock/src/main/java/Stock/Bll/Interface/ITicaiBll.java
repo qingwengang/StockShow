@@ -12,4 +12,5 @@ public interface ITicaiBll {
     List<Ticai> getTicaiList();
     void addTicaiStockRelation(TicaiStockRelation relation);
     void modifyTicaiRelationLevel(int id,int addLevel);
+    void addTicai(Ticai ticai);
 }

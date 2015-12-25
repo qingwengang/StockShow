@@ -19,10 +19,11 @@ public class test {
 //        t4.start();
 //        Thread t5=new Thread(st);
 //        t5.start();
-        Calendar calendar = Calendar.getInstance();
-        System.out.print(calendar.getTime());
-        int currentTimeHour = calendar.get(Calendar.HOUR);
-        System.out.println("currenttimehour:"+currentTimeHour);
+//        Calendar calendar = Calendar.getInstance();
+//        System.out.print(calendar.getTime());
+//        int currentTimeHour = calendar.get(Calendar.HOUR);
+//        System.out.println("currenttimehour:"+currentTimeHour);
+        System.out.print("方式");
     }
 
 }

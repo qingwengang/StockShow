@@ -14,6 +14,10 @@ public class Ticai {
     private int Id;
     private String Name;
     private int Status;
+    private int TicaiType;
+    private String Url;
+    private int OrderType;
+    private String TypeName;
     @javax.persistence.Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     public int getId() {
@@ -33,5 +37,37 @@ public class Ticai {
     }
     public void setStatus(int status) {
         Status = status;
+    }
+
+    public int getTicaiType() {
+        return TicaiType;
+    }
+
+    public void setTicaiType(int ticaiType) {
+        TicaiType = ticaiType;
+    }
+
+    public String getUrl() {
+        return Url;
+    }
+
+    public void setUrl(String url) {
+        Url = url;
+    }
+
+    public int getOrderType() {
+        return OrderType;
+    }
+
+    public void setOrderType(int orderType) {
+        OrderType = orderType;
+    }
+
+    public String getTypeName() {
+        return TypeName;
+    }
+
+    public void setTypeName(String typeName) {
+        TypeName = typeName;
     }
 }
