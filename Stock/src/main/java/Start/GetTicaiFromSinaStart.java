@@ -77,6 +77,10 @@ public class GetTicaiFromSinaStart {
             getTicaiRelation(tc);
         }
     }
+    public static void GetTicai(){
+        getTicai(1);
+        getTicai(2);
+    }
     public static void main(String[] ar){
 //        getTicai(2);
         GetTicaiRelation();

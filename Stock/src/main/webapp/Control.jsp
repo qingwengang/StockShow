@@ -14,9 +14,16 @@
   <script src="js/jquery-2.1.4.min.js"></script>
   <script src="jqueryui/jquery-ui.min.js"></script>
   <script src="js/common.js"></script>
-  <script type="javascript">
+  <script type="text/javascript">
     function StockInfoInit(){
       var url="do/ControlController.getStockInfoNew";
+      GetAjax(url, function(
+              data) {
+        alert(data);
+      });
+    }
+    function StockInfoInit(name){
+      var url="do/ControlController."+name;
       GetAjax(url, function(
               data) {
         alert(data);
@@ -25,6 +32,8 @@
   </script>
 </head>
 <body>
-<input type="button" onclick="StockInfoInit();" value="StockInfo表初始化">
+<input type="button" onclick="StockInfoInit()" value="StockInfo表初始化">
+<input type="button" onclick="StockInfoInit('getTicai')" value="ticai表初始化">
+<input type="button" onclick="StockInfoInit('getTicaiStockRelation')" value="ticaistockrelation表初始化">
 </body>
 </html>

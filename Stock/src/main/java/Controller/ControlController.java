@@ -1,6 +1,7 @@
 package Controller;
 
 import Start.GetStockInfoStart;
+import Start.GetTicaiFromSinaStart;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 public class ControlController {
     public String getStockInfoNew(HttpServletRequest req, HttpServletResponse resp){
         GetStockInfoStart.getStockInfoNew();
+        return "success";
+    }
+    public String getTicai(HttpServletRequest req, HttpServletResponse resp){
+        GetTicaiFromSinaStart.GetTicai();
+        return "success";
+    }
+    public String getTicaiStockRelation(HttpServletRequest req, HttpServletResponse resp){
+        GetTicaiFromSinaStart.GetTicaiRelation();
         return "success";
     }
 }
