@@ -1,4 +1,4 @@
-package Start;
+package Stock.Start;
 
 import Stock.Threads.GetHistoryThread;
 

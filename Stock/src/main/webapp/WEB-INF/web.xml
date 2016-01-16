@@ -5,7 +5,7 @@
          id="WebApp_ID" version="3.0">
     <!--<servlet>-->
         <!--<servlet-name>InitServlet</servlet-name>-->
-        <!--<servlet-class>Servlet.InitServlet</servlet-class>-->
+        <!--<servlet-class>InitServlet</servlet-class>-->
         <!--<load-on-startup>1</load-on-startup>-->
     <!--</servlet>-->
     <servlet>

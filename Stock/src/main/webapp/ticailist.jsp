@@ -16,17 +16,21 @@
   <script type="text/javascript">
     $(function() {
       var id = getUrlParam("id");
-      GetAjax("do/TicaiController.getTicai", function(
+      var ticaitype=getUrlParam("ticaitype");
+      if(ticaitype==undefined||ticaitype==null){
+        ticaitype=1;
+      }
+      GetAjax("do/TicaiController.getTicai?ticaitype="+ticaitype, function(
               data) {
         jsonResp = eval('(' + data + ')');
         var liHtml = "";
         $.each(jsonResp, function(index, item) {
           if (item.id==id) {
-            liHtml += "<li><a href='ticailist.jsp?id=" + item.id
+            liHtml += "<li><a href='ticailist.jsp?id=" + item.id+"&ticaitype="+ticaitype
                     + "' style='color: red;'>" + item.name
                     + "</a></li>";
           } else {
-            liHtml += "<li><a href='ticailist.jsp?id=" + item.id
+            liHtml += "<li><a href='ticailist.jsp?id=" + item.id+"&ticaitype="+ticaitype
                     + "' style='color: #585858;'>" + item.name
                     + "</a></li>";
           }
@@ -61,7 +65,6 @@
               tbHtml4+="<tr><td>"+item.code+"</td><td>"+item.name+"</td><td>"+item.currentPrice+"</td><td>"+item.supportPrice+"</td><td>"+item.pressurePrice+"</td><td><input type='button' value='详情' onclick='showTr(\""+item.code+"\",\""+item.symbol+"\")'><input type='button' value='升' onclick='modifyLevel(\""+item.id+"\",\"-1\")'><input type='button' value='Eidt' onclick='editAnalysisData(\""+item.id+"\",\""+item.code+"\")'>  </td></tr>";
               tbHtml4+="<tr id='"+item.code+"' style='display:none'></tr>";
             }
-
           });
           $("#tbAnaly1").html(tbHtml1);
           $("#tbAnaly2").html(tbHtml2);
@@ -130,6 +133,7 @@
   </script>
 </head>
 <body>
+<jsp:include page="menu.jsp"></jsp:include>
 <div id="main">
   <div id="left">
     <ul id="ulHeartStock">

@@ -1,4 +1,4 @@
-package Start;
+package Stock.Start;
 
 import Stock.Bll.Interface.ITicaiBll;
 import Stock.Bll.TicaiBll;

@@ -55,9 +55,9 @@ public class TicaiBll implements ITicaiBll {
     }
 
     @Override
-    public List<Ticai> getTicaiList() {
-        String sql="select * from ticai where status=1";
-        List<Ticai> tcs= ticaiDao.Query("select * from ticai where status=1");
+    public List<Ticai> getTicaiList(String ticaitype) {
+        String sql="select * from ticai where status=1 and ticaitype="+ticaitype;
+        List<Ticai> tcs= ticaiDao.Query(sql);
         return tcs;
     }
 }

@@ -1,7 +1,7 @@
 package Controller;
 
-import Start.GetStockInfoStart;
-import Start.GetTicaiFromSinaStart;
+import Stock.Start.GetStockInfoStart;
+import Stock.Start.GetTicaiFromSinaStart;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

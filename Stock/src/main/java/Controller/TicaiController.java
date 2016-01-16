@@ -29,7 +29,8 @@ public class TicaiController {
         return "hehehe";
     }
     public String getTicai(HttpServletRequest req, HttpServletResponse resp){
-        List<Ticai> tcs= ticaiBll.getTicaiList();
+        String ticaitype=req.getParameter("ticaitype")==null?"":req.getParameter("ticaitype");
+        List<Ticai> tcs= ticaiBll.getTicaiList(ticaitype);
         JsonConfig jsonConfig = new JsonConfig();
         jsonConfig.setCycleDetectionStrategy(CycleDetectionStrategy.LENIENT);
         JSONArray object=JSONArray.fromObject(tcs,jsonConfig);
